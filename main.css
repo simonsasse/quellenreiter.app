@@ -48,8 +48,6 @@ section {
 .footer{
     position: absolute;
     top: 85vh;
-    overflow-x: scroll;
-    overflow-y: scroll;
 }
 p{
     line-height: normal;
@@ -96,9 +94,10 @@ summary{
 }
 
 img {
+    align-content: center;
    filter: invert();
    transform: translate(-50%, -50%);
-   left: 50vw;
+   left: 50%;
    width: 15vw;
    margin-top: 15vw;
    position: relative;
