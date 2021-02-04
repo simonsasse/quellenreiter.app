@@ -28,12 +28,12 @@ section {
     border-color: white;
     border-width: 3px;
     border-radius: 20px;
-    background-color: black;
     color: white;
-    font-size: auto;
+    background-color: Transparent;
+    font-size: 3vw;
     transition: .5s;
     outline: 0;
-    height: 4vh;
+    z-index: 10
 }
 
 .contact_button:hover {
@@ -47,7 +47,7 @@ section {
 
 .footer{
     position: absolute;
-    top: 95vh;
+    top: 85vh;
     overflow-x: scroll;
     overflow-y: scroll;
 }
@@ -61,7 +61,7 @@ details{
     margin: 5px;
 }
 summary{
-    font-size: 3;
+    font-size: 3.5vw;
 }
 .title{
     font-weight: normal;
@@ -79,6 +79,7 @@ summary{
     transform: translate(-50%, -50%);
     left: 50vw;
     color: grey;
+    margin-top: 30vh;
     font-size: 3.5vw;
     position: relative;
     transition: .5s;
