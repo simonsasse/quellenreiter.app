@@ -1,5 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
-    
+
+// LOGO and TITLE
 gsap.from("#quellenreiter", {
     scrollTrigger:{
         scrub:true,
@@ -9,7 +10,7 @@ gsap.from("#quellenreiter", {
         end: "top 0%",
         toggleAction: "restart pause reverse pause"
     },
-    duration:1, delay: 10, alpha:0 });
+    duration:1, delay: 10, alpha:0, color: "#F5DF4D", scale: 0.1, ease: "back"});
     
     gsap.to("#logo", {
         scrollTrigger:{
@@ -20,141 +21,90 @@ gsap.from("#quellenreiter", {
             end: "top 0%",
             toggleAction: "restart pause reverse pause"
         },
-        duration:1, delay: 10, alpha:0});
-        
+        duration:1, delay: 10, alpha:0, scale: 0.1});
 
-// $('.button').mouseenter(
-//    function() {
-//       gsap.to( $(this),{ duration: 0.001, color: "black" } );
-//    }
-// );
-// $('.button').mouseleave(
-//    function() {
-//       gsap.to( $(this),{ duration: 0.01, color: "lightblue" } );
-//    }
-// );
-
-
-// const img = document.querySelector("#logo");
-// const hover = gsap.to("#logo", {
-//   rotation: 360,
-//   duration: 1,
-//   paused: true,
-//   ease: "ease-in-out"
-// });
-
-// img.addEventListener("mouseenter", () => hover.play());
-// img.addEventListener("mouseleave", () => hover.reverse());
-
-gsap.to(
-    "#scroll_text",
-    {
-        scrollTrigger: {
-            trigger: "#scroll_text",
-            toggleAction: "restart pause pause pause",
-            end: "top center"
-        },
-        duration: 1,
-        alpha:0.2,
-        y:"10%"
-    }
-).repeat(-1).yoyo(true);
-
-// gsap.to("#home_button",{
-//     scrollTrigger: {
-//         scrub: true,
-//         trigger: ".start",
-//         start: "top 50%",
-//         end: "top bottom",
-//         toggleAction: "play pause reverse pause"
-//     },
-//     color: "lightblue",
-//     rotation: 90});
-
-// gsap.to("#concert_button",{
-//     scrollTrigger: {
-//         scrub: true,
-//         trigger: "#app_div",
-//         start: "top 50%",
-//         end: "top 32%",
-//         toggleAction: "play pause reverse pause"
-//     },
-//     color: "black",
-//     rotation:-90});
-// gsap.to("#concert_button",{
-//     scrollTrigger: {
-//         scrub: true,
-//         trigger: "#app_div",
-//         start: "top 50%",
-//         end: "top 32%",
-//         toggleAction: "play pause reverse pause"
-//     },
-//     color: "lightblue",
-//     rotation:-90});
-
-
+// QUICK FACTS
 gsap.from(".date",{
     scrollTrigger: {
         scrub: true,
         trigger: "#dates",
-        start: "top 70%",
-        end: "top 40%"
+        start: "top 90%",
+        toggleAction: "restart pause reverse pause",
+        end: "top 45%"
     },
     stagger: 1.5,
     duration: 5,
     scale:0.5,
-    alpha: 0});
- 
-// gsap.to("#fakenews_div_button",{
-//     scrollTrigger: {
-//         scrub: true,
-//         trigger: "#fakenews_div",
-//         start: "top 50%",
-//         end: "top 32%",
-//         toggleAction: "play reverse play reverse"
-//     },
-//     color: "black",
-//     rotation:-90});
-// gsap.to("#concert_button",{
-//     scrollTrigger: {
-//         scrub: true,
-//         trigger: "#fakenews_div",
-//         start: "top 50%",
-//         end: "top 32%",
-//         toggleAction: "play reverse play reverse"
-//     },
-//     color: "lightblue",
-//     rotation:0});
+    alpha: 0,
+    ease: "back"});
 
-    gsap.from(".link",{
+
+// INFO SECTION
+gsap.from(
+    "li.text",
+    {
         scrollTrigger: {
             scrub: true,
-            trigger: "#fakenews_div",
-            start: "top 90%",
-            end: "top 40%"
+            trigger: ".text",
+            toggleActions: "play pause reverse reset",
+            start: "top 95%",
+            end: "top 45%"
+        },
+        duration: 2,
+        alpha: 0,
+        y: "-500%",
+        ease: "back"
+    }
+)
+// SOCIAL BUTTONS
+gsap.from(
+    ".social_li",
+    {
+        scrollTrigger: {
+            scrub: true,
+            trigger: ".social_li",
+            toggleAction: "restart pause reverse pause",
+            start: "top 95%",
+            end: "top 70%"
         },
         stagger: 1,
+        duration: 5,
+        scale:0.5,
+        alpha: 0,
+        ease: "back"
+    }
+)
+
+// PEOPLE ANIMATION
+gsap.from(
+    ".vertical",
+    {
+        scrollTrigger: {
+            scrub: true,
+            trigger: ".vertical",
+            toggleAction: "restart pause pause pause",
+            start: "top 120%",
+            end: "top 60%"
+        },
+        stagger: 1,
+        duration: 5,
+        scale:0.5,
+        x: "100%",
+        alpha: 0,
+        ease: "back"
+    }
+)
+
+
+    gsap.from(".avatar",{
+        scrollTrigger: {
+            scrub: true,
+            trigger: ".avatar",
+            start: "top 90%",
+            toggleAction: "restart pause pause pause",
+            end: "top 40%"
+        },
         duration: 2,
         scale:0.2,
-        alpha: 0});
-
-// gsap.to("#impressum_button",{
-//     scrollTrigger: {
-//         scrub: true,
-//         trigger: "#impressum",
-//         start: "top 50%",
-//         end: "top 40%",
-//         toggleAction: "play reverse play reverse"
-//     },
-//     color: "black",
-//     rotation:-90});
-// gsap.to("#fakenews_div_button",{
-//     scrollTrigger: {
-//         scrub: true,
-//         trigger: "#impressum",
-//         start: "top 50%",
-//         end: "top 32%",
-//         toggleAction: "play reverse play reverse"
-//     },
-//     color: "lightblue",
-//     rotation:0});
+        alpha: 0,
+        ease: "back"});

@@ -3,10 +3,31 @@
 	font-family: abel;
 	src: url("Abel-Regular.ttf");
   }
+  @media (orientation: portrait) {
   :root {
 	--bgColor: #000000;
 	--highlight: #F5DF4D;
-	--textColor: #ffffff;
+	--textColor: #939597;
+	--grey: #939597;
+	--small: 3vw; 
+	--medium: 4vw;
+	--top_content_padding: 10vh;
+	--button-size: 6vw;
+	}
+  }
+
+@media (orientation: landscape) {
+	:root {
+		--bgColor: #000000;
+		--highlight: #F5DF4D;
+		--textColor: #939597;
+		--grey: #939597;
+		--small: 1.5vw; 
+		--medium: 2vw;
+		--top_content_padding: 33.3vh;
+		--figure-padding: 10px;
+		--button-size: 4vw;
+	  }
   }
   
   html, body{
@@ -36,6 +57,7 @@
 	float: left;
 	background-color: var(--bgColor);
 	margin-left: 1vw;
+	margin-top: 2vh;
 	border-style: solid;
 	border-radius: 5px;
 	border-color: var(--textColor);;
@@ -47,7 +69,6 @@
 	padding: 0%;
 	color: var(--textColor);;
 	text-align: center;
-	padding: 1vw 1vw;
 	text-decoration: none;
   }
   
@@ -63,7 +84,7 @@
 	text-decoration: none;
 	font-weight: normal;
 	color: var(--textColor);;
-	font-size: 4vw;
+	font-size: var(--button-size);
 	transition: 0.35s;
 }
 
@@ -104,9 +125,10 @@
   }
   
   .title{
+	color: var(--grey);
 	font-size: 16vw;
-	top:50vh;
-	left: 50vw;
+	top:50%;
+	left: 50%;
 	transform: translate(-50%, -50%);
   }
 
@@ -127,8 +149,8 @@
 	  padding-right: 1%;
 	  padding-bottom: 1%;
 	  position: absolute;
-	  width: 100%;
-	  top: 33.3%;
+	  width: 97%;
+	  top: var(--top_content_padding);
 	  align-content: center;
 	  border-color: var(--textColor);;
 	  border-style: solid;
@@ -140,8 +162,8 @@
 	padding-right: 1%;
 	padding-bottom: 1%;
 	position: absolute;
-	width: 100%;
-	top: 33.3%;
+	width: 97%;
+	top: var(--top_content_padding);
 	align-content: center;
 	border-color: var(--textColor);;
 	border-style: solid;
@@ -150,9 +172,12 @@
 
 .tabbed > input,
 .tabbed figure > div { display: none; }
-
+.tabbed figure{
+	margin: 5px;
+	padding: 0px;
+}
 .tabbed figure>div {
-  padding: 20px;
+  padding: 0px;
   width: 100%;
   background: var(--bgColor);
   line-height: 1.5em;
@@ -173,13 +198,16 @@
  }
   */
  nav label:nth-child(1) { border-left: 1px solid silver; }
- nav label:hover { background: hsl(210,50%,40%); }
- nav label:active { background: #ffffff; }
+ nav label:hover { 
+	 background: white;
+	 color: var(--highlight);
+}
+ nav label:active { background: var(--highlight); }
  
  #tab1:checked ~ nav label[for="tab1"],
  #tab2:checked ~ nav label[for="tab2"],
  #tab3:checked ~ nav label[for="tab3"] {
-   background: white;
+   background: var(--highlight);
    color: #111;
    position: relative;
    border-bottom: none;
@@ -192,10 +220,9 @@
    display: block;
    position: absolute;
    height: 2px;
-   width: 100%;
    background: white;
    left: 0;
-   bottom: -1px;
+   border-bottom: none;
  }
   h2{
 	  left: 50vw;
@@ -209,20 +236,45 @@
 	  border-radius: 5px;
 	  margin: 0;
 	  position: relative;
-	  width: 33.333%;
+	  width: auto;
+	  padding-left: 1vw;
+	  padding-right: 1vw;
   }
-  h2.tab{
-
+ 
+  nav{
+	  width: auto;
+		transform: translate(-50%, 0%);
+		position:relative;
+		left: 55%;
   }
   
-  p{
+  label{
+	  transform: translate(0%, -50%);
+	  font-weight: normal;
+	  font-size: 4vw;
+	  text-align: center;
+	  color: var(--bgColor);
+	  display: inline-block;
+	  background-color:  var(--grey);
+	  border-radius: 5px;
+	  border-width: 0px;
+	  margin: 0;
+	  position: relative;
+	  width: 30%;
+	  transition: 0.2s;
+  }
+  
+  p{	
 	  font-weight: normal;
 	  text-align: center;
 	  color: var(--textColor);;
 	  font-size: 2vw;
 	  position: relative;
+	  @media (orientation: portrait) { 
+		flex-wrap: 6vw;
+	  }
   }
-  ul.social{
+  ul.social_ul{
 	list-style-type:none;
 	transform: translate(-50%, 0%);
 	float: left;
@@ -232,12 +284,16 @@
 	position: relative;
 	left: 50vw;
   }
-  li.social{
+  li.social_li{
 	float: left;
 	margin-left: 1vw;
+	padding: 1vh 4vw;
 	border-style: solid;
 	border-radius: 5px;
 	border-color: var(--textColor);;
+  }
+  li.social_li:hover{
+	  background-color: var(--highlight);
   }
   .link{
 	text-align: center;
@@ -245,13 +301,13 @@
 	position: relative;
 	text-decoration: none;
 	color: var(--textColor);;
-	font-size:2vw;
+	font-size: var(--medium);
 	transition: 0.35s;
   }
-  a.link:hover {
+  /* a.link:hover {
 	color: var(--bgColor);
 	background-color: var(--textColor);;
-  }
+  } */
   .date{
 	  font-weight: normal;
 	  margin: 0;
@@ -264,7 +320,7 @@
   }
   li.text{
 	  margin-top: 1vh;
-	  font-size: 1.5vw;
+	  font-size: var(--small);
 	  color: var(--textColor);
   }
   p.subheading{
@@ -274,12 +330,98 @@
 
   p.text{
 	  text-align: left;
-	font-size: 1.5vw;
+	  font-size: var(--small);
   }
+
+  /* @media (orientation: portrait) {
+	p.text{
+	text-align: left;
+	  font-size: 3vw;
+	}
+  } */
   .anchor{
 	  height: 1%;
 	  top: 50%;
 	  alpha:0;
 	  text-align:right;
   }
-  
+
+
+  /* PERSON */
+  .people{
+	padding: 2%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 5vh;
+  }
+  .person{
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50%;
+  }
+  .avatar {
+	transform: translate(0%, 0%);
+	position: relative;
+	left: 0%;
+    object-fit: cover;
+    width: 10vw;
+	height: 10vw;
+    margin-right: 0.1vw;
+    border-radius: 50%;
+}
+
+.bio{
+	color: var(--textColor);
+	font-size: var(--small);
+	padding-left: 5%;
+}
+
+.name {
+	padding-left: 5%;
+	font-size: 2vw;
+    color: var(--highlight);
+}
+.vertical{
+	display: block;
+}
+
+/* IMPRESSUM */
+details{
+	margin-top: 10px;
+	color: var(--textColor);
+}
+summary{
+	text-align: center;
+	color: var(--textColor);
+	margin-top: 0px;
+	font-size: var(--small);
+}
+h1.imp{
+	color: var(--textColor);
+	text-align: left;
+	position: relative;
+	font-size: 5em;
+}
+h2.imp{
+	all: initial;
+	background-color: ;
+	color: var(--textColor);
+	text-align: left;
+	position: relative;
+	font-size: 3em;
+}
+h3.imp{
+	color: var(--textColor);
+	text-align: left;
+	position: relative;
+	font-size: 2em;
+}
+p.imp{
+	color: var(--textColor);
+	text-align: left;
+	position: relative;
+	font-size: 1em;
+}
