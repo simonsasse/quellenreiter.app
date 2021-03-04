@@ -104,7 +104,18 @@
 	  width: 100%;
 	  box-sizing: border-box;
   }
-
+@media (orientation: portrait) {
+	#app{
+		height: 30vh;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	#about{
+		height: 60vh;
+		width: 100%;
+		box-sizing: border-box;
+	}
+}
   .container{
 	  width: 100%;
 	  position: relative;

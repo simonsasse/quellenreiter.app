@@ -41,18 +41,18 @@ gsap.from(".date",{
 
 // INFO SECTION
 gsap.from(
-    "li.text",
+    "ul.text",
     {
         scrollTrigger: {
             scrub: true,
-            trigger: ".text",
+            trigger: "ul.text",
             toggleActions: "play pause reverse reset",
             start: "top 95%",
-            end: "top 45%"
+            end: "top 60%"
         },
         duration: 2,
         alpha: 0,
-        y: "-500%",
+        scale: 0,
         ease: "back"
     }
 )
@@ -96,15 +96,15 @@ gsap.from(
 )
 
 
-    gsap.from(".avatar",{
-        scrollTrigger: {
-            scrub: true,
-            trigger: ".avatar",
-            start: "top 90%",
-            toggleAction: "restart pause pause pause",
-            end: "top 40%"
-        },
-        duration: 2,
-        scale:0.2,
-        alpha: 0,
-        ease: "back"});
+gsap.from(".avatar",{
+    scrollTrigger: {
+        scrub: true,
+        trigger: ".avatar",
+        start: "top 90%",
+        toggleAction: "restart pause pause pause",
+        end: "top 40%"
+    },
+    duration: 2,
+    scale:0.2,
+    alpha: 0,
+    ease: "back"})
