@@ -143,9 +143,12 @@
 	transform: translate(-50%, -50%);
   }
 
-  img {
-	 height: 33.3%;
-	 top: 33.3%;
+  .dummy-video {
+	 transform: translate(-50%, 0%);
+     left: 50%;
+	 width: 80%;
+	 max-height: 140%;
+	 top: 10%;
 	 position: absolute;
   }
   .start{
@@ -377,6 +380,7 @@
 	transform: translate(0%, 0%);
 	position: relative;
 	left: 0%;
+	top: 0%;
     object-fit: cover;
     width: 10vw;
 	height: 10vw;
